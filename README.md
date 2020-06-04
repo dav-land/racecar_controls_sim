@@ -10,6 +10,7 @@ sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ro
 
 sudo apt-get install ros*controller*
 ```
+Next we need to update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
 Next we need to clone the github repo into the src folder
 ```
 cd ~/catkin_ws/src
