@@ -6,9 +6,7 @@ Assumed clean install of Ubuntu 18.04 and Ros Melodic Desktop Full with `catkin_
 
 First we need to install some dependancies
 ```
-sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-map-server
-
-sudo apt-get install ros*controller*
+sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-map-server ros*controller*
 ```
 Next we need to update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
 Next we need to clone the github repo into the src folder

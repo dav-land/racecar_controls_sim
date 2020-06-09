@@ -271,4 +271,10 @@
   <xacro:include filename="$(find racecar_description)/urdf/racecar.gazebo" />
   <xacro:include filename="$(find racecar_description)/urdf/materials.xacro" />
 
+  <xacro:include filename="$(find racecar_description)/urdf/_d435.urdf.xacro">
+    <sensor_d435 parent="${prefix}base_link">
+      <origin xyz="0.0 0.2 0" rpy="0 0 0"/>
+    </sensor_d435>
+  </xacro:include>
+
 </robot>
