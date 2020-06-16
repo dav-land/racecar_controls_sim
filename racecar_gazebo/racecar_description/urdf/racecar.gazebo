@@ -55,7 +55,13 @@
     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
   </plugin>
 </gazebo>
-
+<!--
+<gazebo reference="camera_link">
+  <sensor type="camera" name="realsense">
+    <plugin name="gazebo_realsense" filename="librealsense_gazebo_plugin.so">
+  </plugin>
+</gazebo>
+-->
   <!-- hokuyo -->
 <xacro:unless value="$(optenv DISABLE_GAZEBO_LASER false)">
   <gazebo reference="laser">
