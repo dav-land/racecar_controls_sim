@@ -265,6 +265,34 @@
     <axis xyz="0 0 1" />
   </joint>
 
+  <!-- Add imu -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.05" />
+      <inertia ixx="4e-6" ixy="0" ixz="0" iyy="4e-6" iyz="0" izz="4e-6" />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+      <material name="orange" />
+    </visual>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0.265 0.0 0.0" rpy="0 0 0"/>
+    <parent link="chassis" />
+    <child link="imu_link" />
+    <axis xyz="0 0 1" />
+  </joint>
+
   <!-- Add the remaining xacros -->
 
   <xacro:include filename="$(find racecar_description)/urdf/racecar.gazebo" />
