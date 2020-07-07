@@ -105,7 +105,7 @@
           <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.2</near>
+          <near>0.02</near>
           <far>7</far>
         </clip>
         <noise>
@@ -114,14 +114,14 @@
           <stddev>0.007</stddev>
         </noise>
       </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+      <plugin name="camera_controller" filename="libgazebo_ros_depth_camera.so">
         <alwaysOn>true</alwaysOn>
         <cameraName>camera_ir</cameraName>
         <imageTopicName>/camera/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
         <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
         <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
-        <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+        <!-- <pointCloudTopicName>/camera/depth/points</pointCloudTopicName> -->
         <frameName>camera_link</frameName>
         <pointCloudCutoff>0.5</pointCloudCutoff>
         <pointCloudCutoffMax>7.0</pointCloudCutoffMax>
