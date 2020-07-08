@@ -1,0 +1,7 @@
+<launch>
+
+<!-- launch racecar environment -->
+<include file="$(find racecar_gazebo)/launch/racecar_hallway.launch" />
+
+
+</launch>

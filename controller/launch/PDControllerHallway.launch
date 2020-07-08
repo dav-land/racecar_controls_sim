@@ -1,0 +1,12 @@
+<launch>
+
+<!-- launch racecar environment -->
+<include file="$(find racecar_gazebo)/launch/racecar_hallway.launch" />
+
+<!-- Launch Depth Publisher -->
+<node pkg="controller" type="getDepth.py" name="depth_node"/>
+
+<!-- Launch PD Controller -->
+<node pkg="controller" type="PDController.py" name="control_node"/>
+
+</launch>
