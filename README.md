@@ -15,6 +15,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/dav-land/racecar_controls_sim.git
 cd ..
 catkin_make
+source devel/setup.bash
 ```
 
 ## Running the Simulation
