@@ -8,7 +8,8 @@ First we need to install some dependancies
 ```
 sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-map-server ros*controller*
 ```
-Next we need to update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
+Going forward you may or may not run into an error with the gazebo server. If you do you can update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
+
 Next we need to clone the GitHub repo into the src folder
 ```
 cd ~/catkin_ws/src
