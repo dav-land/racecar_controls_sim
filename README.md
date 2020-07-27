@@ -31,3 +31,14 @@ While a PD controller is a great starting point it becomes unreliable the faster
 ### Software Used
 This was set up using Ubuntu 18.04 using VMware on a Windows 10 machine. In order to get Gazebo to launch in the VM the graphics instruction must be shrunk down using `export SVGA_VGPU10=0`.
 To make this change permanent use `echo "export SVGA_VGPU10=0">>~/.profile`
+
+
+```
+sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-map-server ros*controller*
+cd ~/catkin_ws/src
+git clone https://github.com/dav-land/racecar_controls_sim.git
+cd ..
+catkin_make
+source devel/setup.bash
+roslaunch controller PDControllerHallway.launch
+```
