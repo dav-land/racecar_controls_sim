@@ -8,13 +8,15 @@ First we need to install some dependancies
 ```
 sudo apt-get install ros-melodic-tf2-geometry-msgs ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-map-server ros*controller*
 ```
-Next we need to update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
+Going forward you may or may not run into an error with the gazebo server. If you do you can update the server for gazebo located at `~/.ignition/fuel/config.yaml` from https://api.ignitionfuel.org to https://api.ignitionrobotics.org
+
 Next we need to clone the GitHub repo into the src folder
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/dav-land/racecar_controls_sim.git
 cd ..
 catkin_make
+source devel/setup.bash
 ```
 
 ## Running the Simulation
@@ -29,12 +31,3 @@ While a PD controller is a great starting point it becomes unreliable the faster
 ### Software Used
 This was set up using Ubuntu 18.04 using VMware on a Windows 10 machine. In order to get Gazebo to launch in the VM the graphics instruction must be shrunk down using `export SVGA_VGPU10=0`.
 To make this change permanent use `echo "export SVGA_VGPU10=0">>~/.profile`
-
-
-roslaunch rtabmap_ros rtabmap.launch \
-    rtabmap_args:="--delete_db_on_start" \
-    depth_topic:=/camera/depth/image_raw \
-    rgb_topic:=/camera/color/image_raw \
-    camera_info_topic:=/camera/color/camera_info \
-    approx_sync:=true \
-    visual_odometry:=false odom_topic:=/vesc/odom
