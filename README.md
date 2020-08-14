@@ -24,8 +24,17 @@ To get started with a simple PD controller in the hallway environment run the fo
 ```
 roslaunch controller PDControllerHallway.launch
 ```
-While a PD controller is a great starting point it becomes unreliable the faster the car goes.  In order to see this edit the `controller/src/PDController.py` file, line 52. Change it from `self.cmd_pub.drive.speed = 2.0` to `self.cmd_pub.drive.speed = 5.0`. This will cause the car to not have enough time to register the turn and it will crash into the wall.
+While a PD controller is a great starting point it becomes unreliable the faster the car goes.  In order to see this edit the `controller/src/PDController.py` file, line 52. Change it from `self.cmd_pub.drive.speed = 2.0` to `self.cmd_pub.drive.speed = 6.0`. This will cause the car to not have enough time to register the turn and it will crash into the wall.
 
 ### Software Used
 This was set up using Ubuntu 18.04 using VMware on a Windows 10 machine. In order to get Gazebo to launch in the VM the graphics instruction must be shrunk down using `export SVGA_VGPU10=0`.
 To make this change permanent use `echo "export SVGA_VGPU10=0">>~/.profile`
+
+
+roslaunch rtabmap_ros rtabmap.launch \
+    rtabmap_args:="--delete_db_on_start" \
+    depth_topic:=/camera/depth/image_raw \
+    rgb_topic:=/camera/color/image_raw \
+    camera_info_topic:=/camera/color/camera_info \
+    approx_sync:=true \
+    visual_odometry:=false odom_topic:=/vesc/odom

@@ -12,7 +12,6 @@ class ImageListener:
         self.bridge = CvBridge()
         self.sub = rospy.Subscriber(topic, Image, self.imageDepthCallback)
         self.pub = rospy.Publisher('/depth_data', Depth, queue_size=1)
-        # self.img_pub = rospy.Publisher('/depth_image', Image, queue_size=1)
         self.pub_msg = Depth()
 
     def imageDepthCallback(self, data):
@@ -31,15 +30,13 @@ class ImageListener:
             self.left = sum(self.left)/len(self.left)
             self.center = [ cv_image[vertical_pixel, x] for x in range(300,340)]
 
-            # rospy.loginfo(self.center)
             self.center = sum(self.center)/len(self.center)
 
             self.pub_msg.left = self.left
             self.pub_msg.right = self.right
             self.pub_msg.center = self.center
-            #rospy.loginfo(self.pub_msg)
+
             self.pub.publish(self.pub_msg)
-            #rospy.sleep(0.0333)
 
         except CvBridgeError as err:
             print(err)

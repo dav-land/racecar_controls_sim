@@ -1,7 +1,12 @@
 <launch>
 
+<param name="/use_sim_time" value="true"/>
+
 <!-- launch racecar environment -->
 <include file="$(find racecar_gazebo)/launch/racecar_hallway.launch" />
+
+<!-- Launch Camera Noise Internal -->
+<node pkg="controller" type="internalCameraNoise.py" name="camera_noise_node"/>
 
 <!-- Launch Depth Publisher -->
 <node pkg="controller" type="getDepth.py" name="depth_node"/>

@@ -111,7 +111,7 @@
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
-          <stddev>0.007</stddev>
+          <stddev>0.0</stddev>
         </noise>
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_depth_camera.so">
@@ -119,7 +119,7 @@
         <cameraName>camera_ir</cameraName>
         <imageTopicName>/camera/color/image_raw</imageTopicName>
         <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
-        <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+        <depthImageTopicName>/camera/depth/image_raw/internal</depthImageTopicName>
         <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
         <!-- <pointCloudTopicName>/camera/depth/points</pointCloudTopicName> -->
         <frameName>camera_link</frameName>
